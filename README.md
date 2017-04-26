@@ -1,1 +1,1 @@
-http://appdev.openshift.io/mission-health-check-vertx.html
+http://appdev.openshift.io/docs/mission-health-check-vertx.html
