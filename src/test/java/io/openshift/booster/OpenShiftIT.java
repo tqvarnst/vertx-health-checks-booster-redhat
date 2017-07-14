@@ -68,7 +68,7 @@ public class OpenShiftIT {
 
         AtomicInteger counter = new AtomicInteger();
         long begin = System.currentTimeMillis();
-        await().atMost(3, TimeUnit.MINUTES).until(() -> {
+        await().atMost(5, TimeUnit.MINUTES).until(() -> {
             counter.incrementAndGet();
             Response response = get("/api/greeting");
             return response.getStatusCode() == 200;

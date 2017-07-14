@@ -4,13 +4,13 @@ spec:
       containers:
         - name: vertx
           livenessProbe:
-            failureThreshold: 2
+            failureThreshold: 1
             httpGet:
               path: "/api/health/liveness"
               port: 8080
               scheme: HTTP
             initialDelaySeconds: 60
-            periodSeconds: 3
+            periodSeconds: 10
             successThreashold: 1
             timeoutSeconds: 1
           readinessProbe:
