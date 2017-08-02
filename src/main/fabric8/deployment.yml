@@ -9,7 +9,7 @@ spec:
               path: "/api/health/liveness"
               port: 8080
               scheme: HTTP
-            initialDelaySeconds: 60
+            initialDelaySeconds: 30
             periodSeconds: 10
             successThreashold: 1
             timeoutSeconds: 1
@@ -20,6 +20,6 @@ spec:
               port: 8080
               scheme: HTTP
             initialDelaySeconds: 10
-            periodSeconds: 10
+            periodSeconds: 3
             successThreashold: 1
             timeoutSeconds: 1

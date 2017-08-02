@@ -30,10 +30,10 @@ public class OpenShiftIT {
 
         assistant.awaitApplicationReadinessOrFail();
         // Check that the route is served.
-        await().atMost(5, TimeUnit.MINUTES).catchUncaughtExceptions().until(() -> get().getStatusCode() < 500);
+        await().atMost(5, TimeUnit.MINUTES).catchUncaughtExceptions().until(() -> get().getStatusCode() < 400);
         await().atMost(5, TimeUnit.MINUTES).catchUncaughtExceptions().until(() -> {
             try {
-                return get("/api/greeting").getStatusCode() < 500;
+                return get("/api/greeting").getStatusCode() < 400;
             } catch (Exception e) {
                 return false;
             }
