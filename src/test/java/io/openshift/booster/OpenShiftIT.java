@@ -46,12 +46,6 @@ public class OpenShiftIT {
     }
 
     @Test
-    public void testThatWeServeAsExpected() throws MalformedURLException {
-        get("/api/greeting").then().body("content", equalTo("Hello, World!"));
-        get("/api/greeting?name=vert.x").then().body("content", equalTo("Hello, vert.x!"));
-    }
-
-    @Test
     public void testThatWeRecover() throws MalformedURLException {
         await().atMost(5, TimeUnit.MINUTES).catchUncaughtExceptions().until(() -> {
             try {
