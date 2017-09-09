@@ -1,2 +1,7 @@
 name: Vert.x Health Check Example
 description: Demonstrate health check and recovery mechanism
+versions:
+  - id: community
+    name: Eclipse Vert.x 3.4.2.Final (Community)
+  - id: redhat
+    name: Vert.x 3.4.2.redhat-4 (RHOAR)
