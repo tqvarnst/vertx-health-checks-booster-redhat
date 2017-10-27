@@ -57,8 +57,8 @@ public class OpenShiftIT {
         });
 
 
-        // Kill me
-        get("/api/killme").then().statusCode(200);
+        // Stop the service
+        get("/api/stop").then().statusCode(200);
 
         AtomicInteger counter = new AtomicInteger();
         long begin = System.currentTimeMillis();

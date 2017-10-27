@@ -74,7 +74,7 @@ public class HttpApplicationTest {
     }
 
     @Test
-    public void callKillMe(TestContext context) {
+    public void callStopService(TestContext context) {
         Async async = context.async();
 
         client.get(8080, "localhost", "/api/health/liveness")
@@ -84,8 +84,8 @@ public class HttpApplicationTest {
                 String status = resp.result().bodyAsJsonObject().getString("outcome");
                 assertThat(status).isEqualTo("UP");
 
-                // Kill me...
-                client.get(8080, "localhost", "/api/killme")
+                // Stop the service
+                client.get(8080, "localhost", "/api/stop")
                     .send(resp2 -> {
                         assertThat(resp2.succeeded()).isTrue();
                         assertThat(resp2.result().statusCode()).isEqualTo(200);
