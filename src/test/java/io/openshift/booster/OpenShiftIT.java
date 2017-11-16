@@ -24,9 +24,7 @@ import static org.hamcrest.core.IsEqual.equalTo;
 @RunWith(Arquillian.class)
 public class OpenShiftIT {
 
-  private static final String APPLICATION_NAME = "health-check-vertx";
-
-  @RouteURL(APPLICATION_NAME)
+  @RouteURL("${app.name}")
   private URL route;
 
   @Before
