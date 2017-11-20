@@ -16,6 +16,8 @@ public class HttpApplication extends AbstractVerticle {
   private static final String template = "Hello, %s!";
 
   private boolean online = false;
+  
+  // TODO: Add Static variable here
 
   @Override
   public void start(Future<Void> future) {
@@ -28,7 +30,9 @@ public class HttpApplication extends AbstractVerticle {
     router.get("/api/stop").handler(this::stopTheService);
     router.get("/api/health/readiness").handler(rc -> rc.response().end("OK"));
     router.get("/api/health/liveness").handler(healthCheckHandler);
+    // TODO: ADD Router here
     router.get("/").handler(StaticHandler.create());
+
 
     vertx
       .createHttpServer()
@@ -39,6 +43,8 @@ public class HttpApplication extends AbstractVerticle {
           future.handle(ar.mapEmpty());
         });
   }
+  
+  // TODO: Add method here
 
   private void stopTheService(RoutingContext rc) {
     rc.response().end("Stopping HTTP server, Bye bye world !");
